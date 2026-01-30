@@ -52,7 +52,7 @@ def fetch_channels(host: str, device_auth: str) -> list:
     """Fetch EPG channels from HDHomeRun device."""
     channel_data = []
     logger.info("Fetching HDHomeRun Web API Lineup for auth %s" % device_auth)
-    url = "http://%s/lineup.json" % host
+    url = "https://api.hdhomerun.com/api/lineup?DeviceAuth=" % device_auth
     with urllib.request.urlopen(url) as response:
         channel_data = json.loads(response.read().decode())
 
