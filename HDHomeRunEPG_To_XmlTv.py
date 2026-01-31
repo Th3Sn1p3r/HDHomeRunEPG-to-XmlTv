@@ -181,6 +181,9 @@ def create_xmltv_programme(programme_data: dict, channel_number: str, xmltv_root
 def generate_xmltv(host: str, days: int, hours: int, filename: str) -> None:
     """Generate XMLTV file from HDHomeRun EPG data."""
     # Initialize XMLTV root
+
+    host = "192.168.0.193"
+
     xmltv_root = ET.Element("tv")
     xmltv_root.set("source-info-name", "HDHomeRun")
     xmltv_root.set("generator-info-name", "HDHomeRunEPG_to_XmlTv")
